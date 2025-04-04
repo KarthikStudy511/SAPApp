@@ -1,2 +1,2 @@
 # SAPApp
-Simple Agile Project Application
+Simple Agile Project application
