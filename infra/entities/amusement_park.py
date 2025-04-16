@@ -1,30 +1,59 @@
 class amusement_park:
-    # attribtes: opening time, closing time, ride_no, park_name
+    # attribtes: park_name, no_of_rides, per hour rate, opening time, closing time
     def __init__(self):
         pass
+
+    # opening time attribute
     def set_opening_time(self, opening_time):
-        self.opening_time = opening_time
-        if type(self.opening_time) == str:
+        
+        if type(opening_time) != int:
             return "invalid input"
         else:
+            self.opening_time = opening_time
             return self.opening_time
     def get_opening_time(self):
-        
         return self.opening_time
+    
+    #closing time attribute
+    def set_closing_time(self, closing_time):
+        
+        if type(closing_time) != int:
+            return "invalid input"
+        else:
+            self.closing_time = closing_time
+            return self.closing_time
     def get_closing_time(self):
         return self.closing_time
-    def set_closing_time(self, closing_time):
-        self.closing_time = closing_time
-        if type(self.closing_time) == str:
+
+    # no of rides attribute
+    def set_no_of_rides(self, no_of_rides):
+        
+        if type(no_of_rides) != int:
             return "invalid input"
         else:
-            return self.closing_time
-
-    def set_ride_no(self, ride_no):
-        self.ride_no = ride_no
-        if type(self.ride_no) == str:
+            self.no_of_rides = no_of_rides
+            return self.no_of_rides
+    def get_no_of_rides(self):
+        return self.no_of_rides
+    
+    # park name attribute
+    def set_park_name(self, park_name):
+        
+        if type(park_name) != str:
             return "invalid input"
         else:
-            return self.ride_no
+            self.park_name = park_name
+            return self.park_name
+    def get_park_name(self):
+        return self.park_name
 
+    # per hour rate attribute
+    def get_per_hr_rate(self):
+        return self.per_hr_rate
+    def set_per_hr_rate(self, per_hr_rate):
+        if type(per_hr_rate) != int:
+            return "invalid input"
+        else:
+            self.per_hr_rate = per_hr_rate
+            return self.per_hr_rate
 
