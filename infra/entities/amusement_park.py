@@ -1,12 +1,15 @@
+from datetime import datetime, timedelta
+
 class amusement_park:
     # attribtes: park_name, no_of_rides, per hour rate, opening time, closing time
-    def __init__(self):
-        pass
+    def __init__(self, opening_time):
+        self.opening_time = opening_time
+        self.closing_time = opening_time + timedelta(hours=8)
 
     # opening time attribute
     def set_opening_time(self, opening_time):
         
-        if type(opening_time) != int:
+        if type(opening_time) != datetime:
             return "invalid input"
         else:
             self.opening_time = opening_time
@@ -17,7 +20,7 @@ class amusement_park:
     #closing time attribute
     def set_closing_time(self, closing_time):
         
-        if type(closing_time) != int:
+        if type(closing_time) != datetime:
             return "invalid input"
         else:
             self.closing_time = closing_time
@@ -56,4 +59,7 @@ class amusement_park:
         else:
             self.per_hr_rate = per_hr_rate
             return self.per_hr_rate
+    
+    def get_working_hours(self):
+        return int((self.get_closing_time() - self.get_opening_time()).total_seconds()) / 3600
 
