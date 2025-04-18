@@ -38,12 +38,40 @@ class customer:
     def get_spending_amt(self):
         return self.spending_amt
     def set_spending_amt(self, spending_amt):
-        if type(spending_amt) != int:
-            return "invalid input"
-        else:
-            self.spending_amt = spending_amt
-            return self.spending_amt
+        
+        self.spending_amt = spending_amt
+        
+        
+    # checks if the input is int or not and uses try except block to handle the exception
     
+    
+    def float_value(self, value):
+        if value is None:
+            return False
+        try:
+            float(value)
+            return True
+        except:
+            return False
+    def int_value(self, value):
+        if value is None:
+            return False
+        try:
+            if self.float_value(value):
+                return True
+            int(value)
+            return True
+        except:
+            return False
+    
+    def str_value(self, value):
+        if value is None:
+            return False
+        try:
+            str(value)
+            return True
+        except:
+            return False
     
 
 
