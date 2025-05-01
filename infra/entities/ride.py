@@ -2,19 +2,21 @@
 
 class ride():
     # attribute: ride_name, ride_duration, min_age, max_age, ride_availability
-    def __init__(self):
-        pass
+    def __init__(self, ride_name, ride_duration, min_age, max_age):
+        self.ride_name = ride_name
+        self.ride_duration = ride_duration
+        self.min_age = min_age
+        self.max_age = max_age
+        self.ride_availability = True
     
     
     # ride name attr
     def get_ride_name(self):
         return self.ride_name
     def set_ride_name(self, ride_name):
-        if type(ride_name) != str:
-            return "invalid input"
-        else:
-            self.ride_name = ride_name
-            return self.ride_name
+        
+        self.ride_name = ride_name
+        
 
     # ride duration attr
     def get_ride_duration(self):

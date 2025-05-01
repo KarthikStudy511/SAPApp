@@ -13,7 +13,10 @@ class customer:
         else:
             self.phone_no = phone_no
             return self.phone_no
-    
+    def set_balance_hours(self, balance_hours):
+        self.balance_hours = balance_hours
+    def get_balance_hours(self):
+        return self.balance_hours
     # name of the player
     def get_player_name(self):
         return self.player_name
@@ -28,11 +31,9 @@ class customer:
     def get_player_age(self):
         return self.player_age
     def set_player_age(self, player_age):
-        if type(player_age) != int:
-            return "invalid input"
-        else:
-            self.player_age = player_age
-            return self.player_age
+        
+        self.player_age = player_age
+
     
     # spending amount of the player
     def get_spending_amt(self):
