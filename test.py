@@ -33,3 +33,4 @@ import pyfiglet
 import os
 
 print(os.path.join(os.path.dirname(pyfiglet.__file__), 'fonts'))
+print("hello world")
