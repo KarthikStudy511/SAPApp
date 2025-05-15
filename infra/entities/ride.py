@@ -2,11 +2,12 @@
 
 class ride():
     # attribute: ride_name, ride_duration, min_age, max_age, ride_availability
-    def __init__(self, ride_name, ride_duration, min_age, max_age):
+    def __init__(self, ride_name, ride_duration, min_age, max_age, ride_no):
         self.ride_name = ride_name
         self.ride_duration = ride_duration
         self.min_age = min_age
         self.max_age = max_age
+        self.ride_no= ride_no
         self.ride_availability = True
     
     
@@ -16,7 +17,8 @@ class ride():
     def set_ride_name(self, ride_name):
         
         self.ride_name = ride_name
-        
+    def get_ride_no(self):
+        return self.ride_no
 
     # ride duration attr
     def get_ride_duration(self):

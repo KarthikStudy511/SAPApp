@@ -2,29 +2,26 @@ from datetime import datetime, timedelta
 
 class amusement_park:
     # attribtes: park_name, no_of_rides, per hour rate, opening time, closing time
-    def __init__(self, opening_time):
-        self.opening_time = opening_time
-        self.closing_time = opening_time + timedelta(hours=8)
+    def __init__(self):
+        # self.opening_time = opening_time
+        # self.closing_time = self.get_opening_time() + timedelta(hours=7)
+        pass
 
     # opening time attribute
     def set_opening_time(self, opening_time):
         
-        if type(opening_time) != datetime:
-            return "invalid input"
-        else:
-            self.opening_time = opening_time
-            return self.opening_time
+        
+        self.opening_time = opening_time
+            
     def get_opening_time(self):
         return self.opening_time
     
     #closing time attribute
     def set_closing_time(self, closing_time):
         
-        if type(closing_time) != datetime:
-            return "invalid input"
-        else:
-            self.closing_time = closing_time
-            return self.closing_time
+        
+        self.closing_time = closing_time
+        # return self.closing_time
     def get_closing_time(self):
         return self.closing_time
 

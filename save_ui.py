@@ -199,10 +199,10 @@ def create_ticket(title, ticket_info):
     # List of rides in yellow small font
     small_font = pyfiglet.Figlet(font='small')
     rides = [
-        "Horse Riding", 
-        "Roller Coaster",
-        "Laser Tag",
-        "Photo Booth"
+        "1 . Horse Riding", 
+        "2 . Roller Coaster",
+        "3 . Laser Tag",
+        "4 . Photo Booth"
     ]
     
     for ride in rides:
