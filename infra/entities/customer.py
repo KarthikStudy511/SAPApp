@@ -2,6 +2,7 @@
 class customer:
     # attribtes: phone_no, player_name, player_age, spending_amt
     def __init__(self):
+        
         pass
 
     # phone no of the player

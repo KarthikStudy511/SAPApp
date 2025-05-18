@@ -32,7 +32,7 @@ green_gradient = [Fore.LIGHTGREEN_EX, Fore.GREEN]
 
 # INIT PARK OBJECT
 ap = amusement_park()  # Opening time set to 9:00 AM
-ap.set_opening_time(timedelta(hours=9, minutes=0))
+ap.set_opening_time(timedelta(hours=10, minutes=0))
 ap.set_closing_time(ap.get_opening_time() + timedelta(hours=9))
 ap.set_no_of_rides(4)
 ap.set_park_name("Rushland")
@@ -40,7 +40,6 @@ ap.set_per_hr_rate(100)  # Assuming 100rs per hour
 # print(ap.get_opening_time())
 # print(ap.get_closing_time())
 # print(ap.get_working_hours())
-
 
 # GENERATE SLIDE_1 OBJECT
 sl_1 = slide()

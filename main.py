@@ -67,16 +67,20 @@ while run:
                             el_rides.append(end_ride)
                             el_ride_nos.append('9')  # Add exit option
 
+                            t_1 = ticket()
+                            t_1.set_ticket_id(set_random_id())
                             # Create initial ticket
                             ticket_info = {
-                                "Ticket ID": set_random_id(),
+                                "Ticket ID": t_1.get_ticket_id(),
                                 "Name": cus.get_player_name(),
                                 "Age": cus.get_player_age(),
                                 "Balance Hours": round(cus.get_balance_hours(), 2),
                                 "Applicable Rides": el_ride_names,
                             }
                             sl_1.create_ticket(f"{ap.get_park_name()} Ticket", ticket_info, el_rides)
+                            
 
+                            
                             # Main ride selection loop
                             min_ride_duration = min([r.get_ride_duration() / 60 for r in [ride_1, ride_2, ride_3, ride_4]])
                             while True:
@@ -86,6 +90,7 @@ while run:
 
                                 # Validate ride choice
                                 if is_valid_ride_choice(ask_ride_choice, el_ride_nos, cus.get_balance_hours(), el_rides):
+                                    
                                     if ask_ride_choice == '9':
                                         show_farewell_screen()
                                         run = False
@@ -94,11 +99,13 @@ while run:
                                     # Find chosen ride
                                     chosen_ride_name = None
                                     chosen_ride_duration = None
+                                    # ask_ride_choice_int = int(ask_ride_choice)
                                     for each_ride in el_rides:
                                         if str(each_ride.get_ride_no()) == ask_ride_choice:
                                             chosen_ride_name = each_ride.get_ride_name()
                                             chosen_ride_duration = each_ride.get_ride_duration() / 60
                                             break
+                                        
 
                                     # Deduct balance hours
                                     cus.set_balance_hours(deduct_hours_from_balance(ask_ride_choice, cus.get_balance_hours(), el_rides))
@@ -109,7 +116,7 @@ while run:
                                     while True:
                                         if not check_bh(cus.get_balance_hours(), min_ride_duration):
                                             ticket_info = {
-                                                "Ticket ID": set_random_id(),
+                                                "Ticket ID": t_1.get_ticket_id(),
                                                 "Name": cus.get_player_name(),
                                                 "Age": cus.get_player_age(),
                                                 "Balance Hours": round(cus.get_balance_hours(), 2),
