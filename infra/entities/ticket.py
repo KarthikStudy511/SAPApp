@@ -18,11 +18,9 @@ class ticket:
     def get_ticket_id(self):
         return self.ticket_id
     def set_ticket_id(self, ticket_id):
-        if type(ticket_id) != str:
-            return "invalid input"
-        else:
-            self.ticket_id = ticket_id
-            return self.ticket_id
+        
+        self.ticket_id = ticket_id
+        
     
     # available rides attribute
     def get_available_rides(self):

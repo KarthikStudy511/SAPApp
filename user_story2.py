@@ -1,11 +1,11 @@
-from user_story1 import *
+
 from infra.entities.amusement_park import amusement_park
 from infra.entities.ride import ride
 from infra.entities.ticket import ticket
 from infra.entities.customer import customer
 from datetime import *
 import random
-import pyfiglet
+
 from colorama import init, Fore, Style
 from ui_part1 import *
 
@@ -51,4 +51,6 @@ def is_valid_ride_choice(choice, el_ride_nos, balance_hrs, rides):
         ride_duration_hrs = convert_min_to_hrs(choice, rides)
         if ride_duration_hrs == 0 or balance_hrs < ride_duration_hrs:
             return False
+    if "0" in choice:
+        return False
     return True
